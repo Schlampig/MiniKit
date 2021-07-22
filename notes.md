@@ -1,7 +1,7 @@
 ### ASCII ↔ UNICODE
 ord()
 
-### Collection
+### Collections
 collections库特别是Counter
 
 ### Dictionary
