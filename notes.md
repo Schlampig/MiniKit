@@ -1,5 +1,7 @@
 ### ASCII—UNICODE: 编码转换操作
-ord()
+- ord()
+- chr()
+- unichr()
 
 ### Collections库
 - Counter
@@ -10,31 +12,48 @@ ord()
 - itemgetter，attrgetter
 
 ### IsX操作
-isdigit/isalpha/isalnum/isupper()/islower()/upper()/lower()等
+- isdigit()
+- isalpha()
+- isalnum()
+- isupper(), islower(), upper(), lower()
 
 ### Itertools库
-itertools库
 
 ### List Comprehension: 链表解析
-链表解析→用生成器提速→字典也能链表解析
+- 链表解析
+- 用生成器提速
+- 字典链表解析
 
 ### Operator库
 
 ### Radix: 进制转换操作
-进制转换：bin()、oct()、int()、hex()
+- bin()
+- oct()
+- int()
+- hex()
 
 ### Random库
 random.choice/shuffle/sample/seed/random/randint
 
 ### Re库与正则表达式
-re库环视、?贪婪非贪婪、跨行编辑、finditer、分组
+- 环视
+- ?: 贪婪与非贪婪搜索
+- 跨行匹配
+- finditer
+- 分组
 
 ### Set: 集合操作
-set集的交集、并集等操作
+- 去重
+- 交集
+- 并集
+- 差集
 
 ### Sort: 排序操作
-sort多key排序keyword = x,y,z...
+- sort出现位置
+- sort简单排序
+- sort多键按优先级排序
 
 ### Time库与Timeit库
-time库/timeit库
+- time库
+- timeit库
 
