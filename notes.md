@@ -34,7 +34,14 @@
 - hex()
 
 ### Random库
-random.choice/shuffle/sample/seed/random/randint
+- choice()
+- shuffle()
+- sample()
+- seed()
+- random()
+- randint()
+- uniform()
+- randrange()
 
 ### Re库与正则表达式
 - 环视
