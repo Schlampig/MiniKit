@@ -71,7 +71,28 @@
 <br>
 
 ### Dictionary: 字典操作
-- 合并两个字典
+- 合并字典
+  - 使用update
+    ```bash
+    >>> dict_a = {"a": 1, "b": 2, "e":5}
+    >>> dict_b = {"c": 3, "d": 4, "e":7}
+    >>> dict_a.update(dict_b);dict_a
+    {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
+    ```
+  - 使用\*\*号
+    ```bash
+    >>> dict_a = {"a": 1, "b": 2, "e":5}
+    >>> dict_b = {"c": 3, "d": 4, "e":7}
+    >>> {**dict_a, **dict_b}
+    {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
+    ```
+  - 使用dict(a,\*\*b)
+  ```bash
+    >>> dict_a = {"a": 1, "b": 2, "e":5}
+    >>> dict_b = {"c": 3, "d": 4, "e":7}
+    >>> dict(dict_a, **dict_b)
+    {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
+    ```
 - 有序字典（OrderedDict）
 - itemgetter，attrgetter
 
