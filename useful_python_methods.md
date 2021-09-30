@@ -72,21 +72,21 @@
 
 ### Dictionary: 字典操作
 - 合并字典
-  - 使用update
+  - :notebook: 使用update，会修改dict_a的结构，如果不想更新dict_a，可以"d = dict(dict_a);d.update(dict_b);print(d)"：
     ```bash
     >>> dict_a = {"a": 1, "b": 2, "e":5}
     >>> dict_b = {"c": 3, "d": 4, "e":7}
     >>> dict_a.update(dict_b);dict_a
     {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
     ```
-  - 使用\*\*号
+  - 使用\*\*号：
     ```bash
     >>> dict_a = {"a": 1, "b": 2, "e":5}
     >>> dict_b = {"c": 3, "d": 4, "e":7}
     >>> {**dict_a, **dict_b}
     {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
     ```
-  - 使用dict(a,\*\*b)
+  - 使用dict(a,\*\*b)：
   ```bash
     >>> dict_a = {"a": 1, "b": 2, "e":5}
     >>> dict_b = {"c": 3, "d": 4, "e":7}
