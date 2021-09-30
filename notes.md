@@ -11,6 +11,7 @@
 'B'
 ```
 - :notebook: 可使用ord()来限定某类符号的范围，例如汉语注音符号的范围是0x3100至0x312F。也可用ord()与chr()搭配用在需要互相转换的场合。
+<br>
 
 ### Collections库
 - Counter
