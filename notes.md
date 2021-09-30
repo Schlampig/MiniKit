@@ -53,6 +53,21 @@
     >>> cnt["a"]
     2
     ```
+  - :notebook: 自定义Counter对象及相关运算：
+    ```bash
+    >>> cnt_a = Counter(a=3, b=2, c=1);print(cnt_a)
+    Counter({'a': 3, 'b': 2, 'c': 1})
+    >>> cnt_b = Counter(a=1, b=2, c=3);print(cnt_b)
+    Counter({'c': 3, 'b': 2, 'a': 1})
+    >>> cnt_a + cnt_b
+    Counter({'a': 4, 'b': 4, 'c': 4})
+    >>> cnt_a - cnt_b
+    Counter({'a': 2})
+    >>> cnt_a & cnt_b
+    Counter({'b': 2, 'a': 1, 'c': 1})
+    >>> cnt_a | cnt_b
+    Counter({'a': 3, 'c': 3, 'b': 2})
+    ```
 <br>
 
 ### Dictionary: 字典操作
