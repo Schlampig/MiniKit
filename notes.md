@@ -17,8 +17,29 @@
 - **Counter()**: 用于计数，以一个迭代器（数组，字符串，列表等）作为参数，返回对该迭代器中各项出现次数的统计结果。
   - 基础用法，统计结果：
     ```bash
-    >>> ord('熊'）
+    >>> from collections import Counter
+    >>> Counter("this is a demo, just a demo")
+    Counter({' ': 6, 's': 3, 't': 2, 'i': 2, 'a': 2, 'd': 2, 'e': 2, 'm': 2, 'o': 2, 'h': 1, ',': 1, 'j': 1, 'u': 1})
     ```
+    或是，
+    ```bash
+    >>> from collections import Counter
+    >>> Counter(['t', 'h', 'i', 's', 'i', 's', 'a', 'd', 'e', 'm', 'o', ',', 'j', 'u', 's', 't', 'a', 'd', 'e', 'm', 'o'])
+    Counter({'s': 3, 't': 2, 'i': 2, 'a': 2, 'd': 2, 'e': 2, 'm': 2, 'o': 2, 'h': 1, ',': 1, 'j': 1, 'u': 1})
+    ```
+    也可以将Counter类型转为字典输出，
+    ```bash
+    >>> from collections import Counter
+    >>> dict(Counter("this is a demo, just a demo"))
+    {'t': 2, 'h': 1, 'i': 2, 's': 3, ' ': 6, 'a': 2, 'd': 2, 'e': 2, 'm': 2, 'o': 2, ',': 1, 'j': 1, 'u': 1}
+    ```
+  - 排序返回前K个高频字符：
+    ```bash
+    >>> cnt = Counter("this is a demo, just a demo")
+    >>> cnt.most_common(3)  # 查看前3个高频字符
+    [(' ', 6), ('s', 3), ('t', 2)]
+    ```
+<br>
 
 ### Dictionary: 字典操作
 - 合并两个字典
