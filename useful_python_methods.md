@@ -124,6 +124,7 @@
     :notebook: 由于改写了内部算法，Python3.6及之后版本的字典是有序的。
     
 - itemgetter，attrgetter
+<br>
 
 ### IsX操作
 - **isdigit()**: 检测字符串是否只由数字组成，返回True或False。
@@ -163,6 +164,7 @@
 - **islower()**: 检测字符串中所有字母是否都为大写，返回True或False。 
 - **upper()**: 将字符串中的小写字母转为大写字母。
 - **lower()**: 将字符串中的大写字母转为小写字母。
+<br>
 
 ### Itertools库
 
