@@ -94,6 +94,35 @@
     {'a': 1, 'b': 2, 'e': 7, 'c': 3, 'd': 4}
     ```
 - 有序字典（OrderedDict）
+  - 使用不同方式定义有序字典，例如依次插入key与value:
+    ```bash
+    >>> import collections
+    >>> order_dict = collections.OrderedDict()
+    >>> order_dict["a"] = 1
+    >>> order_dict["b"] = 2
+    >>> order_dict["c"] = 3
+    >>> order_dict["d"] = 4
+    >>> order_dict["e"] = 5
+    ```
+    或是以下形式：
+    ```bash
+    >>> order_dict = collections.OrderedDict({"e":5, "d":4, "c":3, "b":2, "a":1})
+    >>> order_dict = collections.OrderedDict(e=5, d=4, c=3, b=2, a=1)
+    >>> order_dict = collections.OrderedDict({k:v for k, v in [["e", 5], ["d", 4], ["c", 3], ["b", 2], ["a", 1]]})
+    ```
+    输出都一样：
+    ```bash
+    >>> for k, v in order_dict.items():
+    ...     print(k, ": ", v)
+    ... 
+    e :  5
+    d :  4
+    c :  3
+    b :  2
+    a :  1
+    ```
+    :notebook: 由于改写了内部算法，Python3.6及之后版本的字典是有序的。
+    
 - itemgetter，attrgetter
 
 ### IsX操作
