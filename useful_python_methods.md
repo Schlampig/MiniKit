@@ -124,7 +124,7 @@
     :notebook: 由于改写了内部算法，Python3.6及之后版本的字典是有序的。
     
 - **itemgetter()**: 
-  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**字典**的排序逻辑。key=itemgetter("key_name")功能等价于key=lambda x: x\["key_name"]:
+  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**字典**的排序逻辑。**key=itemgetter("key_name")** 功能等价于 **key=lambda x: x\["key_name"]**:
     ```bash
     >>> lst_people = [{"name": "Alice", "job": "Computer Science", "age": "32"},
                       {"name": "Bob", "job": "Software Engineer", "age": "27"}, 
@@ -151,7 +151,7 @@
          {'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
          {'name': 'David', 'job': 'Project Manager', 'age': '33'}]
     ```
-  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**元组**的排序逻辑。key=itemgetter(index)功能等价于key=lambda x: x\[index]:
+  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**元组**的排序逻辑。**key=itemgetter(index)** 功能等价于 **key=lambda x: x\[index]**:
     ```bash
     >>> lst_people = [('Alice', 'Computer Science', '32'), 
                       ('Bob', 'Software Engineer', '27'), 
@@ -178,7 +178,7 @@
          ('Alice', 'Computer Science', '32'), 
          ('David', 'Project Manager', '33')]
     ```
-  - 在排序方法中，指定多个index的排序优先级（多级排序）：
+  - 在排序方法中，指定多个index的排序优先级（多级排序）。**key=itemgetter(index_1, index_2, index_3)** 功能等价于 **key=lambda x: (x\[index_1], x\[index_2], x\[index_3])**：
     ```bash
     >>> lst_people = [('Alice', 'Computer Science', '27'), 
                       ('Bob', 'Software Engineer', '27'), 
@@ -194,6 +194,13 @@
          ('Chris', 'System Administrator', '30'), 
          ('David', 'Algorithm Engineer', '30'), 
          ('David', 'Project Manager', '30')]
+    
+    >>> sorted(lst_people, key=lambda x: (x[2], x[0], x[1]))
+        [('Alice', 'Computer Science', '27'), 
+        ('Bob', 'Software Engineer', '27'), 
+        ('Chris', 'System Administrator', '30'), 
+        ('David', 'Algorithm Engineer', '30'), 
+        ('David', 'Project Manager', '30')]
     ```
 
 - attrgetter
