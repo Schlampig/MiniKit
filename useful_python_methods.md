@@ -237,8 +237,30 @@
         Alice 's birthday is  09 - 13
     ```  
 
-- attrgetter
+- **attrgetter()**: 根据元组的某个字段（key）给元组列表排序，支持嵌套。
+  ```bash
+  >>> lst_people = [('Alice', 'Computer Science', '27', ('09', '13')), 
+                    ('Bob', 'Software Engineer', '27',  ('08', '06')), 
+                    ('Chris', 'System Administrator', '30', ('03', '16')), 
+                    ('David', 'Project Manager', '30', ('04', '15')), 
+                    ('David', 'Algorithm Engineer', '30', ('11', '27'))]
 
+  >>> from collections import namedtuple
+  >>> Birth_info = namedtuple("Birth", "month day")
+  >>> Person = namedtuple("Person", "name job age birth")
+  >>> people_info = [Person(name, job, age, Birth_info(month, day)) for name, job, age, (month, day) in lst_people]
+
+  >>> from operator import attrgetter
+  >>> check_one = attrgetter("name", "job", "age", "birth.month")
+  >>> for person_now in sorted(people_info, key=attrgetter("age")):
+  ...     print(check_one(person_now))
+  ... 
+      ('Alice', 'Computer Science', '27', '09')
+      ('Bob', 'Software Engineer', '27', '08')
+      ('Chris', 'System Administrator', '30', '03')
+      ('David', 'Project Manager', '30', '04')
+      ('David', 'Algorithm Engineer', '30', '11')
+  ``` 
 <br>
 
 ### IsX操作
