@@ -70,7 +70,7 @@
     ```
 <br>
 
-### Dictionary: 字典操作
+### Dictionary & Tuple: 字典与元组操作
 - 合并字典
   - :notebook: 使用update，会修改dict_a的结构，如果不想更新dict_a，可以"d = dict(dict_a);d.update(dict_b);print(d)"：
     ```bash
@@ -202,6 +202,40 @@
         ('David', 'Algorithm Engineer', '30'), 
         ('David', 'Project Manager', '30')]
     ```
+    
+- 具名元组：
+  - **namedtuple()**: 通过构造一个带字段名的元组，方便理解、查找元组内部指定含义的数据。namedtuple(typename, field_names, verbose=False, rename=False)，其中typename为元组名称，field_names为元组中元素的名称，verbose默认，若元素名称中含有Python关键字，则须设置rename=True。构建具名元组有两种方法，常规方法如下：
+    ```bash
+    >>> from collections import namedtuple
+    >>> Person = namedtuple("Person", ["name", "job", "age"])
+    >>> one_person = Person(name="Alice", job="Computer Science", age="27")
+    >>> one_person
+        Person(name='Alice', job='Computer Science', age='27')
+    >>> print(one_person.name, " is ", one_person.age)
+        Alice  is  27
+    ```
+  - 构建具名元组的另一种方法，涉及使用._make:
+    ```bash
+    >>> from collections import namedtuple
+    >>> Person = namedtuple("Person", "name job age")
+    >>> one_person = Person._make(["Alice", "Computer Science", "27"])
+    >>> one_person
+        Person(name='Alice', job='Computer Science', age='27')
+    >>> print(one_person.name, " is ", one_person.age)
+        Alice  is  27
+    ```
+  - 构建嵌套具名元组：
+    ```bash
+    >>> from collections import namedtuple
+    >>> Birth_info = namedtuple("Birth", "month day")
+    >>> Person = namedtuple("Person", "name job age birth")
+    >>> birth_info = Birth_info(month="09", day="13")
+    >>> one_person = Person(name="Alice", job="Computer Science", age="27", birth=birth_info)
+    >>> one_person
+        Person(name='Alice', job='Computer Science', age='27', birth=Birth(month='09', day='13'))
+    >>> print(one_person.name, "'s birthday is ", one_person.birth.month, "-", one_person.birth.day)
+        Alice 's birthday is  09 - 13
+    ```  
 
 - attrgetter
 
