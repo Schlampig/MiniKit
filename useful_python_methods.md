@@ -130,25 +130,57 @@
                       {"name": "Bob", "job": "Software Engineer", "age": "27"}, 
                       {"name": "Chris", "job": "System Administrator", "age": "30"}, 
                       {"name": "David", "job": "Project Manager", "age": "33"}]
+                      
     >>> from operator import itemgetter
+    
     >>> sorted(lst_people, key=itemgetter("job"))
         [{'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
          {'name': 'David', 'job': 'Project Manager', 'age': '33'}, 
          {'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
          {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}]
+         
     >>> sorted(lst_people, key=itemgetter("age"))
         [{'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
          {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}, 
          {'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
          {'name': 'David', 'job': 'Project Manager', 'age': '33'}]
+         
     >>> sorted(lst_people, key=lambda x: x["age"])
         [{'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
          {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}, 
          {'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
          {'name': 'David', 'job': 'Project Manager', 'age': '33'}]
     ```
+  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**元组**的排序逻辑。key=itemgetter(index)功能等价于key=lambda x: x\[index]:
+    ```bash
+    >>> lst_people = [('Alice', 'Computer Science', '32'), 
+                      ('Bob', 'Software Engineer', '27'), 
+                      ('Chris', 'System Administrator', '30'), 
+                      ('David', 'Project Manager', '33')]
+                      
+    >>> from operator import itemgetter
+         
+    >>> sorted(lst_people, key=itemgetter(1))
+        [('Alice', 'Computer Science', '32'), 
+         ('David', 'Project Manager', '33'), 
+         ('Bob', 'Software Engineer', '27'), 
+         ('Chris', 'System Administrator', '30')]
+         
+    >>> sorted(lst_people, key=itemgetter(2))
+        [('Bob', 'Software Engineer', '27'), 
+         ('Chris', 'System Administrator', '30'), 
+         ('Alice', 'Computer Science', '32'), 
+         ('David', 'Project Manager', '33')]
+
+    >>> sorted(lst_people, key=lambda x: x[2])
+        [('Bob', 'Software Engineer', '27'), 
+         ('Chris', 'System Administrator', '30'), 
+         ('Alice', 'Computer Science', '32'), 
+         ('David', 'Project Manager', '33')]
+    ```
 
 - attrgetter
+
 <br>
 
 ### IsX操作
