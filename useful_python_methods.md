@@ -178,7 +178,7 @@
          ('Alice', 'Computer Science', '32'), 
          ('David', 'Project Manager', '33')]
     ```
-  - 在排序方法中，指定多个index的排序优先级：
+  - 在排序方法中，指定多个index的排序优先级（多级排序）：
     ```bash
     >>> lst_people = [('Alice', 'Computer Science', '27'), 
                       ('Bob', 'Software Engineer', '27'), 
