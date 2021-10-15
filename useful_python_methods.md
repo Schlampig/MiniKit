@@ -178,6 +178,23 @@
          ('Alice', 'Computer Science', '32'), 
          ('David', 'Project Manager', '33')]
     ```
+  - 在排序方法中，指定多个index的排序优先级：
+    ```bash
+    >>> lst_people = [('Alice', 'Computer Science', '27'), 
+                      ('Bob', 'Software Engineer', '27'), 
+                      ('Chris', 'System Administrator', '30'), 
+                      ('David', 'Project Manager', '30'), 
+                      ('David', 'Algorithm Engineer', '30')]
+                      
+    >>> from operator import itemgetter
+             
+    >>> sorted(lst_people, key=itemgetter(2,0,1))
+        [('Alice', 'Computer Science', '27'), 
+         ('Bob', 'Software Engineer', '27'), 
+         ('Chris', 'System Administrator', '30'), 
+         ('David', 'Algorithm Engineer', '30'), 
+         ('David', 'Project Manager', '30')]
+    ```
 
 - attrgetter
 
