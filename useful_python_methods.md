@@ -123,7 +123,32 @@
     ```
     :notebook: 由于改写了内部算法，Python3.6及之后版本的字典是有序的。
     
-- itemgetter，attrgetter
+- **itemgetter()**: 
+  - 搭配排序相关方法（如**sorted()**）的入参**key**使用，指定列表中**字典**的排序逻辑。key=itemgetter("key_name")功能等价于key=lambda x: x\["key_name"]:
+    ```bash
+    >>> lst_people = [{"name": "Alice", "job": "Computer Science", "age": "32"},
+                      {"name": "Bob", "job": "Software Engineer", "age": "27"}, 
+                      {"name": "Chris", "job": "System Administrator", "age": "30"}, 
+                      {"name": "David", "job": "Project Manager", "age": "33"}]
+    >>> from operator import itemgetter
+    >>> sorted(lst_people, key=itemgetter("job"))
+        [{'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
+         {'name': 'David', 'job': 'Project Manager', 'age': '33'}, 
+         {'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
+         {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}]
+    >>> sorted(lst_people, key=itemgetter("age"))
+        [{'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
+         {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}, 
+         {'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
+         {'name': 'David', 'job': 'Project Manager', 'age': '33'}]
+    >>> sorted(lst_people, key=lambda x: x["age"])
+        [{'name': 'Bob', 'job': 'Software Engineer', 'age': '27'}, 
+         {'name': 'Chris', 'job': 'System Administrator', 'age': '30'}, 
+         {'name': 'Alice', 'job': 'Computer Science', 'age': '32'}, 
+         {'name': 'David', 'job': 'Project Manager', 'age': '33'}]
+    ```
+
+- attrgetter
 <br>
 
 ### IsX操作
