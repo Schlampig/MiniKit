@@ -18,7 +18,7 @@ def pos_simplizer(s):
     return s
 
 
-def str2list(s):
+def str2lst(s):
     """
     Split sentence into words corresponding to part-of-speech of each word
     :param s: string, input sentence
@@ -64,5 +64,5 @@ def str2list(s):
 
 
 if __name__ == "__main__":
-    res = str2list("我特别喜欢吃红苹果，当然还有黑巧克力")
+    res = str2lst("我特别喜欢吃红苹果，当然还有黑巧克力")
     print(res)
