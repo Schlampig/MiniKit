@@ -66,7 +66,7 @@ class LCS(object):
         return self.all_lcs(mapping, self.lcs_mat(), len(self.list1), len(self.list2))
 
 
-def str2list(s, use_ltp=False):
+def str2lst(s, use_ltp=False):
     """
     Split the input text into "word"s and find the attribute for each word as "attr"
     :param s: string, input text
@@ -84,8 +84,8 @@ def str2list(s, use_ltp=False):
 
 
 def find_diff(s_a, s_b, find_same=True):
-    lst_a = str2list(s_a)
-    lst_b = str2list(s_b)
+    lst_a = str2lst(s_a)
+    lst_b = str2lst(s_b)
     lst_word_a = [word for word, _ in lst_a]
     lst_word_b = [word for word, _ in lst_b]
     lst_same = LCS(lst_word_a, lst_word_b).get_lists()
@@ -116,8 +116,8 @@ if __name__ == "__main__":
     print(lst_all)
 
     # example 2
-    print(str2list("这真就特么是一个测试不是？"), "\n")
-    print(str2list("这是个与众不同的测试属于是了"), "\n")
+    print(str2lst("这真就特么是一个测试不是？"), "\n")
+    print(str2lst("这是个与众不同的测试属于是了"), "\n")
 
     # example 3
     res_a, res_b = find_diff("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
