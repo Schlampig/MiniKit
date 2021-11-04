@@ -113,11 +113,11 @@ if __name__ == "__main__":
     # example 1
     lst_all = LCS(['这', '真就', '特', '么', '是', '一个', '测试', '不是', '?'],
                   ['这', '是', '个', '与众不同', '的', '测试', '属于', '是', '了']).get_lists()
-    print(lst_all)
+    print(lst_all, "\n")
 
     # example 2
-    print(str2lst("这真就特么是一个测试不是？"), "\n")
-    print(str2lst("这是个与众不同的测试属于是了"), "\n")
+    print(str2list("这真就特么是一个测试不是？"), "\n")
+    print(str2list("这是个与众不同的测试属于是了"), "\n")
 
     # example 3
     res_a, res_b = find_diff("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
