@@ -77,12 +77,13 @@ class LCS(object):
         self.list2 = l2
 
     def fuzz_compare(self, source, target):
+        # note: two fuzz.ratio threshold could be manually set.
         flag = False
         if source == target:
             flag = True
-        if (source in target) or (target in source):
+        if ((source in target) or (target in source)) and fuzz.ratio(source, target) > 60:
             flag = True
-        if fuzz.ratio(source, target) > 0.8:
+        if fuzz.ratio(source, target) > 85:
             flag = True
         return flag
 
