@@ -135,7 +135,8 @@ def split_by_diff_fuzz(s_a, s_b, find_same=True):
         lst_a = str2lst(s_a)
         lst_b = str2lst(s_b)
     elif isinstance(s_a, list) and isinstance(s_b, list):
-        pass
+        lst_a = s_a
+        lst_b = s_b
     else:
         raise KeyError("Source and Target are in wrong format [should be string or list].")
     lst_same = LCS(lst_a, lst_b).get_lists()
