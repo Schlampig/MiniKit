@@ -83,11 +83,17 @@ def str2lst(s, use_ltp=False):
     return lst
 
 
-def find_diff(s_a, s_b, find_same=True):
-    lst_a = str2lst(s_a)
-    lst_b = str2lst(s_b)
-    lst_word_a = [word for word, _ in lst_a]
-    lst_word_b = [word for word, _ in lst_b]
+def split_by_diff(s_a, s_b, find_same=True):
+    if isinstance(s_a, str) and isinstance(s_b, str):
+        lst_a = str2list(s_a)
+        lst_b = str2list(s_b)
+        lst_word_a = [word for word, _ in lst_a]
+        lst_word_b = [word for word, _ in lst_b]
+    elif isinstance(s_a, list) and isinstance(s_b, list):
+        lst_word_a = s_a
+        lst_word_b = s_b
+    else:
+        raise KeyError("Source and Target are in wrong format [should be string or list].")
     lst_same = LCS(lst_word_a, lst_word_b).get_lists()
     if len(lst_same) == 1:
         lst_same = lst_same[0]
@@ -120,5 +126,5 @@ if __name__ == "__main__":
     print(str2list("这是个与众不同的测试属于是了"), "\n")
 
     # example 3
-    res_a, res_b = find_diff("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
+    res_a, res_b = split_by_diff("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
     print(res_a, "\n", res_b)
