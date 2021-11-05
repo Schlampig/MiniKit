@@ -130,9 +130,14 @@ class LCS(object):
         return self.all_lcs(mapping, self.lcs_mat(), len(self.list1), len(self.list2))
 
 
-def find_diff_fuzz(s_a, s_b, find_same=True):
-    lst_a = str2lst(s_a)
-    lst_b = str2lst(s_b)
+def split_by_diff_fuzz(s_a, s_b, find_same=True):
+    if isinstance(s_a, str) and isinstance(s_b, str):
+        lst_a = str2lst(s_a)
+        lst_b = str2lst(s_b)
+    elif isinstance(s_a, list) and isinstance(s_b, list):
+        pass
+    else:
+        raise KeyError("Source and Target are in wrong format [should be string or list].")
     lst_same = LCS(lst_a, lst_b).get_lists()
     if len(lst_same) == 1:
         lst_same = lst_same[0]
@@ -159,5 +164,5 @@ if __name__ == "__main__":
     print(str2lst("这真就特么是一个测试不是？"))
     print(str2lst("这是个与众不同的测试属于是了"), "\n")
 
-    res_a, res_b = find_diff_fuzz("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
+    res_a, res_b = split_by_diff_fuzz("这真就特么是一个测试不是？", "这是个与众不同的测试属于是了", find_same=True)
     print(res_a, "\n", res_b)
