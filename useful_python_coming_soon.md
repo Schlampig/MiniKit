@@ -31,6 +31,7 @@
 - finditer
 - 分组
 - 转义 repr
+- [让你的正则表达式可读性提高一百倍](https://mp.weixin.qq.com/s/rFqWa9xdHI1XSRLttUjTLA)
 
 ### Set: 集合操作
 - 去重
