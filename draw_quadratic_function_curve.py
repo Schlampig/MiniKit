@@ -13,14 +13,14 @@ def name_y(a, b, c):
     elif b == 0:
         b_part = ""
     else:
-        b_part = "+" + str(b) + "x"
+        b_part = str(b) + "x" if len(a_part) == 0 else "+" + str(b) + "x"
 
     if c < 0:
         c_part = str(c)
     elif c == 0:
         c_part = ""
     else:
-        c_part = "+" + str(c)
+        c_part = str(c) if len(a_part) == 0 and len(b_part) == 0 else "+" + str(c)
 
     y_name = a_part + b_part + c_part
     return y_name
@@ -65,4 +65,4 @@ def draw_quadratic_function_curve(coef, n_points=1000, x_size=[-10, 10], fig_siz
 
 
 if __name__ == "__main__":
-    draw_quadratic_function_curve(coef=[2, -3, 0.1], is_grid=True, is_save=True)
+    draw_quadratic_function_curve(coef=[-2, 3, 0.1], is_grid=True, is_save=True)
